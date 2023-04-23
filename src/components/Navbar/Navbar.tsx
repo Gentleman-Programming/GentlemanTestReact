@@ -1,15 +1,24 @@
-import { AppBar, IconButton, Toolbar, Typography } from '@mui/material';
+import {AppBar, IconButton, Toolbar, Typography} from '@mui/material';
 import React from 'react';
-import { CustomDialog } from '../CustomDialog';
-import { FavoriteTable } from './FavoriteTable';
+import {CustomDialog} from '../CustomDialog';
+import {FavoriteTable} from './FavoriteTable';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { dialogOpenSubject$ } from '../CustomDialog/CustomDialog';
-import { useSelector } from 'react-redux';
-import { AppStore } from '@/redux/store';
+import {dialogOpenSubject$} from '../CustomDialog/CustomDialog';
+import styled from "styled-components";
 
-export interface NavbarInterface {}
+const StyledToolbar = styled(Toolbar)`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  
+  /* on xs devices, the toolbar will be displayed in a column */
+  @media (max-width: 480px) {
+    flex-flow: column wrap;
+    justify-content: center;
+  }
+`;
 
-const Navbar: React.FC<NavbarInterface> = () => {
+const Navbar: React.FC = () => {
   const handleClick = () => {
     dialogOpenSubject$.setSubject = true;
   };
@@ -17,17 +26,17 @@ const Navbar: React.FC<NavbarInterface> = () => {
   return (
     <>
       <CustomDialog>
-        <FavoriteTable />
+        <FavoriteTable/>
       </CustomDialog>
       <AppBar position="sticky">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <StyledToolbar>
+          <Typography variant="h6" component="div">
             Gentleman Programming React TEST
           </Typography>
-          <IconButton color="secondary" aria-label="favorites" component="label" onClick={handleClick}>
-            <FavoriteIcon />
+          <IconButton color="secondary" aria-label="favorites" onClick={handleClick}>
+            <FavoriteIcon/>
           </IconButton>
-        </Toolbar>
+        </StyledToolbar>
       </AppBar>
     </>
   );
