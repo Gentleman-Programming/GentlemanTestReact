@@ -21,7 +21,7 @@ const Navbar: React.FC<NavbarInterface> = () => {
       <CustomDialog>
         <FavoriteTable />
       </CustomDialog>
-      <AppBar position="fixed">
+      <AppBar position="sticky">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Gentleman Programming React TEST
