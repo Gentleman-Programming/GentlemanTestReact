@@ -24,7 +24,7 @@ const PeopleTable: React.FC<PeopleTableInterface> = () => {
     setSelectedPeople(filteredPeople);
   };
 
-  const colums = [
+  const columns = [
     {
       field: 'actions',
       type: 'actions',
@@ -68,7 +68,7 @@ const PeopleTable: React.FC<PeopleTableInterface> = () => {
   return (
     <DataGrid
       rows={statePeople}
-      columns={colums}
+      columns={columns}
       disableColumnSelector
       disableSelectionOnClick
       autoHeight
