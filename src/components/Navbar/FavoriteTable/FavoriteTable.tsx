@@ -18,7 +18,7 @@ const FavoriteTable: React.FC<FavoriteTableInterface> = () => {
     dispatch(removeFavorite(person));
   };
 
-  const colums = [
+  const columns = [
     {
       field: 'actions',
       type: 'actions',
@@ -64,7 +64,7 @@ const FavoriteTable: React.FC<FavoriteTableInterface> = () => {
   return (
     <DataGrid
       rows={stateFavorites}
-      columns={colums}
+      columns={columns}
       disableColumnSelector
       disableSelectionOnClick
       autoHeight
