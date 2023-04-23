@@ -10,8 +10,6 @@ import { AppStore } from '@/redux/store';
 export interface NavbarInterface {}
 
 const Navbar: React.FC<NavbarInterface> = () => {
-  const stateFavorites = useSelector((store: AppStore) => store.favorites);
-
   const handleClick = () => {
     dialogOpenSubject$.setSubject = true;
   };
